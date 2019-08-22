@@ -320,7 +320,7 @@
     margin: 30px auto 50px;
     h2 {
       font-size: 22px;
-      margin-top: 40px;
+      margin: 40px 0 15px;
       a {
         color: $blue;
         text-decoration: none;
@@ -336,7 +336,12 @@
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
-      align-content: space-between;
+      .one_item {
+        margin-right: 50px;
+        &:nth-child(3n) {
+          margin-right: 0;
+        }
+      }
     }
   }
 }

@@ -129,7 +129,7 @@
         = link_to "#", class: "safty_effort_link" do
           = fa_icon "lock"
           安心、安全への取り組み
-  - if @item.user.id == current_user.id
+  - if user_signed_in? && @item.user.id == current_user.id
     .preview_page_box
       = link_to "商品の編集", edit_item_path, class: "preview_page_box__edit"
       or

@@ -32,8 +32,14 @@
         .main_block_new_items_area {
           display: flex;
           flex-wrap: wrap;
-          justify-content: space-between;
+          // justify-content: space-between;
           @include disable-link-decoration();
+          .one_item {
+            margin-right: 40px;
+            &:nth-child(4n) {
+              margin-right: 0;
+            }
+          }
         }
         .link_to_items {
           padding-top: 10px;

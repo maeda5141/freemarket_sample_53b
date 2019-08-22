@@ -3,10 +3,10 @@ lock "~> 3.11.0"
 
 # application name
 set :application, "freemarket_sample_53b"
-set :repo_url, "git@github.com:ratovia/freemarket_sample_53b.git"
+set :repo_url, "git@github.com:maeda5141/freemarket_sample_53b.git"
 
 # Default branch is :master
-# ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
+ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
 # set :deploy_to, "/var/www/my_app_name"
@@ -22,6 +22,7 @@ set :repo_url, "git@github.com:ratovia/freemarket_sample_53b.git"
 # set :pty, true
 
 # Default value for :linked_files is []
+set :linked_files, fetch(:linked_files, []).push('config/master.key')
 # append :linked_files, "config/database.yml"
 
 # Default value for linked_dirs is []
@@ -41,15 +42,15 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 # set :ssh_options, verify_host_key: :secure
 
 # config git
-set :branch, ENV['BRANCH'] || "master"
+# set :branch, ENV['BRANCH'] || "master"
 
 # config ruby
-set :rbenv_type, :user
-set :rbenv_ruby, '2.5.1'
-set :rbenv_custom_path, '/usr/local/rbenv'
+# set :rbenv_type, :user
+# set :rbenv_ruby, '2.5.1'
+# set :rbenv_custom_path, '/usr/local/rbenv'
 # config ssh
 set :ssh_options, auth_methods: ['publickey'],
-                  keys: ['~/.ssh/mercari_25519']
+                  keys: ['~/.ssh/maekk.pem']
 
 # config unicorn
 set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }

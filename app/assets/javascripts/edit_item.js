@@ -21,7 +21,11 @@ $(function () {
 
    //file_fieldの幅を調整
   var imagesLength = $('.select_image').length;
-  $('.image_file_area').css('width', `calc(100% - ${20 * (imagesLength % 5)}%)`);
+  $('.image_file_area').css('width', `calc(100% - ${20 * imagesLength}%)`);
+  if (imagesLength >= 5) {
+    $('.image_file_area').css('display', 'none');
+    
+  }
   
   // remove_imageを追加
   $('.edit_image_remove').on('click', function () {

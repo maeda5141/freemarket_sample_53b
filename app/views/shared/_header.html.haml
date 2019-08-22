@@ -7,10 +7,10 @@
       .header_container_top_right
         - if controller.controller_name == "items" && action_name == "search"
           = form_with url: incremental_items_path ,method: :get ,class: "header_search" do |f| 
-            = f.text_field :keyword ,{class: "header_search__input incremental", placeholder: "何かお探しですか？"}
+            = f.text_field :keyword ,{class: "header_search__input incremental", placeholder: "何かお探しですか。"}
         - else
           = form_with url: search_items_path ,local: true, method: :get ,class: "header_search" do |f| 
-            = f.text_field :keyword ,{class: "header_search__input", placeholder: "何かお探しですか？"}
+            = f.text_field :keyword ,{class: "header_search__input", placeholder: "何かお探しですか。"}
             = f.label :search, {class: "search_label"} do
               = fa_icon "search"
             = f.submit "送信", {class: "header_search__submit", id: "search"}        

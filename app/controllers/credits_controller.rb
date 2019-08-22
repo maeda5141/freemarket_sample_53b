@@ -66,7 +66,7 @@ class CreditsController < ApplicationController
   end
 
   def get_payjp_key
-    ENV["MERUCARI_PAYJP_SECRET_KEY"]
+    Rails.application.credentials.MERUCARI_PAYJP_SECRET_KEY
   end
 
   def get_card_info(user)

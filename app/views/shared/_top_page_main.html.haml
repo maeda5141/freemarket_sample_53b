@@ -6,17 +6,20 @@
         %h2
           = link_to "レディース 新着アイテム", "#"
         .main_block_new_items_area
-          - @items = @ladies
-          = render @items
+          - if @ladies
+            - @items = @ladies
+            = render @items
       .pick_up_category_mens.main_block_new_items
         %h2
           = link_to "メンズ 新着アイテム", "#"
         .main_block_new_items_area
-          - @items = @mens
-          = render @items
+          - if @mens
+            - @items = @mens
+            = render @items
       .pick_up_category_mens.main_block_new_items
         %h2
           = link_to "新着アイテム", "#"
         .main_block_new_items_area
-          - @items = @latest_items
-          = render @items
+          - if @latest_items
+            - @items = @latest_items
+            = render @items

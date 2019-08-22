@@ -12,6 +12,7 @@
   &:hover {
     .header_container_bottom__category_list1 {
       @include ul-style();
+      z-index: 1;
       font-weight: normal;
       position: absolute;
       border-right: $border-design;
@@ -29,6 +30,7 @@
           border-right: 0px;
         ul {
             @include ul-style();
+            z-index: 1;
             border-right: $border-design;
             height: 650px;
             color: $black;
@@ -47,6 +49,7 @@
                 border-right: 0px;
                 ul {
                   @include ul-style();
+                  z-index: 1;
                   position: absolute;
                   width: 300px;
                   top: 0px;
